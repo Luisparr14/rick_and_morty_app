@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:rick_and_morty_app/components/appbar.dart';
-import 'package:rick_and_morty_app/components/listview.dart';
+import 'package:rick_and_morty_app/components/chatacterlist.dart';
 import 'package:rick_and_morty_app/components/textfield.dart';
 import 'package:rick_and_morty_app/services/character_services.dart';
 
@@ -26,7 +26,7 @@ class Home extends StatelessWidget {
           children: [
             TextFieldComponent(textFielController: textFielController),
             SizedBox(height: 10),
-            ListViewComponent(),
+            CharacterList(),
           ],
         ),
       ),
