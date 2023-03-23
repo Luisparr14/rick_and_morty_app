@@ -15,20 +15,20 @@ class EpisodesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final episodesService = Provider.of<EpisodesServices>(context, listen: true);
+    final episodesService =
+        Provider.of<EpisodesServices>(context, listen: true);
 
-    // Future(() => episodesService.filterEpisodes(episodesUrls));
     return Expanded(
       child: ListView.builder(
         itemCount: episodesUrls.length,
         itemBuilder: (context, index) {
+          final episode = episodesService.getEpisodeByURL(episodesUrls[index]);
           return ListTile(
-            title: Text(episodesService.getEpisodeByURL(episodesUrls[index]).name),
-            subtitle: Text(episodesService.getEpisodeByURL(episodesUrls[index]).episode),
+            title: Text(episode.name),
+            subtitle: Text(episode.episode),
           );
         },
       ),
     );
   }
-
 }
