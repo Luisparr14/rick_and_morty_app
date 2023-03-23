@@ -28,13 +28,13 @@ class InfoLocationsResponse {
     InfoLocationsResponse({
         required this.count,
         required this.pages,
-        required this.next,
+        this.next,
         this.prev,
     });
 
     int count;
     int pages;
-    String next;
+    dynamic next;
     dynamic prev;
 
     factory InfoLocationsResponse.fromJson(Map<String, dynamic> json) => InfoLocationsResponse(
