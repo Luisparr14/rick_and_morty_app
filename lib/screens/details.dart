@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rick_and_morty_app/components/card.dart';
 import 'package:rick_and_morty_app/components/chatacterlist.dart';
 import 'package:rick_and_morty_app/components/episodeslist.dart';
+import 'package:rick_and_morty_app/components/locationinfo.dart';
 import 'package:rick_and_morty_app/models/models.dart';
 
 class DetailsScreen extends StatefulWidget {
@@ -64,14 +65,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ElevatedButton(
               onPressed: () => changeOption('locations'),
               style: isEpisodes ? redButtonStyle : greenButtonStyle,
-              child: const Text('Locations'),
+              child: const Text('Character Location'),
             ),
           ],
         ),
         if (isEpisodes)
           EpisodesList(episodesUrls: character.episode)
         else
-          const Text('Locations List')
+          LocationInfo(locationUrl: character.location.url),
       ]),
     );
   }
