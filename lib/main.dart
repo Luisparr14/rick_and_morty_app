@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:rick_and_morty_app/routes/routes.dart';
 import 'package:rick_and_morty_app/services/character_services.dart';
 import 'package:rick_and_morty_app/services/episodes_services.dart';
+import 'package:rick_and_morty_app/services/locations_services.dart';
 
 void main() {
   runApp(const ProviderApp());
@@ -16,8 +17,9 @@ class ProviderApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => CharacterServices()),
-        ChangeNotifierProvider(create: (_) => EpisodesServices()),
+        ChangeNotifierProvider(create: (_) => CharacterServices(), lazy: false),
+        ChangeNotifierProvider(create: (_) => EpisodesServices(), lazy: false),
+        ChangeNotifierProvider(create: (_) => LocationsServices(), lazy: false),
       ],
       child: const MyApp(),
     );
