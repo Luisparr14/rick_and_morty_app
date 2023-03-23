@@ -28,7 +28,7 @@ class InfoCharacterResponse {
     InfoCharacterResponse({
         required this.count,
         required this.pages,
-        required this.next,
+        this.next,
         this.prev,
     });
 
